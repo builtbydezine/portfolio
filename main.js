@@ -42,7 +42,7 @@ $.ajax({
 
 // Call Behance Dev API
 $.ajax({
-    url: 'https://api.behance.net/v2/users/builtbydezine/projects?client_id=mi5pbmpy0xX6lYkhyfZBtaR70SkEeGZn',
+    url: 'https://api.behance.net/v2/users/' + userID + '/projects?client_id='+behanceApiKey,
     dataType: 'json',
     type: 'GET',
     success: function(data) {  
