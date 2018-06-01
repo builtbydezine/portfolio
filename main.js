@@ -35,21 +35,27 @@ jQuery(document).ready(function($){
 
 
 
-        $(function() {
-            $.getJSON('https://api.dribbble.com/v2/users/builtbydezine/shots?access_token=77d0d176c92539706874842475d6e6e6e993602b89303e57fca2bd89d091f9c8
-            &callback=?', function(resp) {
-              if (resp.data.length > 0) {							
-                $.each(resp.data.reverse(), function(i, val) {
-                  $('#dribbble').prepend(
-                    '<li class="box"><img src="'+val.images.normal+'" /><h2>'+val.title+'</h2><p><a href="'+val.html_url+'">original post &rarr;</a></p></li>'
-                  );
-                });
-              }
-              else {
-                $('#dribbble').append('<li>No shots.</li>');
-              }
-            });		   							    
-          });
+// Set the Access Token
+var accessToken = '2865fd485e757f3f12c81bc63e591bdc598353493cd1eb622e250fae6109d33f';
+
+// Call Dribble v2 API
+$.ajax({
+    url: 'https://api.dribbble.com/v2/user/shots?access_token='+accessToken,
+    dataType: 'json',
+    type: 'GET',
+    success: function(data) {  
+      if (data.length > 0) { 
+        $.each(data.reverse(), function(i, val) {                
+          $('#dribbble').prepend(
+            '<a class="shot" target="_blank" href="'+ val.html_url +'" title="' + val.title + '"><div class="title">' + val.title + '</div><img src="'+ val.images.hidpi +'"/></a>'
+            )
+        })
+      }
+      else {
+        $('#dribbble').append('<p>No shots yet!</p>');
+      }
+    }
+});
 
 
 
