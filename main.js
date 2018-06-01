@@ -23,7 +23,7 @@ var behanceApiKey = 'mi5pbmpy0xX6lYkhyfZBtaR70SkEeGZn';
 
 // Call Dribble v2 API
 $.ajax({
-    url: 'https://api.dribbble.com/v2/user/shots?access_token='+accessToken,
+    url: 'https://api.dribbble.com/v2/user/shots?per_page=100&access_token='+accessToken,
     dataType: 'json',
     type: 'GET',
     success: function(data) {  
@@ -42,7 +42,7 @@ $.ajax({
 
 // Call Behance Dev API
 $.ajax({
-    url: 'https://api.behance.net/v2/users/' + userID + '/projects?callback=?&client_id=' + behanceApiKey,
+    url: 'https://api.behance.net/v2/users/' + userID + '/projects?per_page=100&callback=?&client_id=' + behanceApiKey,
     dataType: 'json',
     type: 'GET',
     success: function (data) {
