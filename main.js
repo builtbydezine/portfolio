@@ -46,14 +46,12 @@ $.ajax({
     dataType: 'json',
     type: 'GET',
     success: function(project) { 
-        $.function(key, data) {
-            for (key == 'projects') {
-                data.each(function(i, val) {                
+            for (data in project.projects) {
+                $.each(function(i, val) {                
                     $('#shots').prepend(
                       '<a class="shot" target="_blank" href="'+ val.projects.url +'" title="' + val.projects.name + '"><div class="title">' + val.projects.name + '</div><img src="'+ val.covers[404] +'"/></a>'
                       )
                   })
-            }
         };
     }
 });
