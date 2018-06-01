@@ -46,8 +46,7 @@ $.ajax({
     dataType: 'json',
     type: 'GET',
     success: function(project) { 
-        var data = JSON.stringify(project);
-        var $this = data.projects;
+        var $this = project.projects;
         $this.each(function(i, val) {                
           $('#behance').prepend(
             '<a class="shot" target="_blank" href="'+ val.projects.url +'" title="' + val.projects.name + '"><div class="title">' + val.projects.name + '</div><img src="'+ val.covers[404] +'"/></a>'
