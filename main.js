@@ -29,13 +29,13 @@ $.ajax({
     success: function(data) {  
       if (data.length > 0) { 
         $.each(data.reverse(), function(i, val) {                
-          $('#shots').prepend(
+          $('#dribbble').prepend(
             '<a class="shot" target="_blank" href="'+ val.html_url +'" title="' + val.title + '"><div class="title">' + val.title + '</div><img src="'+ val.images.hidpi +'"/></a>'
             )
         })
       }
       else {
-        $('#shots').append('<p>No shots yet!</p>');
+        $('#dribbble').append('<p>Dribbble says, No shots yet!</p>');
       }
     }
 });
@@ -49,13 +49,13 @@ $.ajax({
     success: function(data) {  
       if (data.length > 0) { 
         $.each(data.reverse(), function(i, val) {                
-          $('#shots').prepend(
+          $('#behance').prepend(
             '<a class="shot" target="_blank" href="'+ val.projects.url +'" title="' + val.projects.name + '"><div class="title">' + val.projects.name + '</div><img src="'+ val.covers[404] +'"/></a>'
             )
         })
       }
       else {
-        $('#shots').append('<p>No shots yet!</p>');
+        $('#behance').append('<p>Behance says, No shots yet!</p>');
       }
     }
 });
