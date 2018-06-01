@@ -45,14 +45,14 @@ $.ajax({
     url: 'https://api.behance.net/v2/users/' + userID + '/projects?callback=?&client_id='+behanceApiKey,
     dataType: 'json',
     type: 'GET',
-    success: function(project) { 
-            for (data in project.projects) {
+    success: function(data) { 
+            for (key in data.projects) {
                 $.each(function(i, val) {                
                     $('#shots').prepend(
                       '<a class="shot" target="_blank" href="'+ val.projects.url +'" title="' + val.projects.name + '"><div class="title">' + val.projects.name + '</div><img src="'+ val.covers[404] +'"/></a>'
                       )
                   })
-        };
+            }
     }
 });
 
