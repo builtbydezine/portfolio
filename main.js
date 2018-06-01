@@ -47,16 +47,11 @@ $.ajax({
     type: 'GET',
     success: function(project) { 
         var data = JSON.stringify(project);
-      if (data) { 
-        $.each(data.reverse(), function(i, val) {                
+        $.each(function(i, val) {                
           $('#behance').prepend(
             '<a class="shot" target="_blank" href="'+ val.projects.url +'" title="' + val.projects.name + '"><div class="title">' + val.projects.name + '</div><img src="'+ val.covers[404] +'"/></a>'
             )
         })
-      }
-      else {
-        $('#behance').append('<p>Behance says, No shots yet!</p>');
-      }
     }
 });
 
