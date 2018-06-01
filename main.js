@@ -36,7 +36,7 @@ jQuery(document).ready(function($){
 
 
         $(function() {
-            $.getJSON('https://api.dribbble.com/v1/users/USERNAME/shots?access_token=77d0d176c92539706874842475d6e6e6e993602b89303e57fca2bd89d091f9c8
+            $.getJSON('https://api.dribbble.com/v2/users/USERNAME/shots?access_token=77d0d176c92539706874842475d6e6e6e993602b89303e57fca2bd89d091f9c8
             &callback=?', function(resp) {
               if (resp.data.length > 0) {							
                 $.each(resp.data.reverse(), function(i, val) {
