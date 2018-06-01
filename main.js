@@ -46,9 +46,13 @@ $.ajax({
     dataType: 'json',
     type: 'GET',
     success: function (data) {
-        for (key in data.projects) {
-            if (key.length > 0) {
+        var myProjects = data.projects;
+        console.log('before:', myProjects);
+        for (myProjects) {
+            if (myProjects.length > 0) {
+                console.log('after:', myProjects);
                 $.each(function (i, val) {
+                    console.log('is', i);
                     $('#behance').prepend(
                         '<a class="shot" target="_blank" href="' + val.projects.url + '" title="' + val.projects.name + '"><div class="title">' + val.projects.name + '</div><img src="' + val.covers[404] + '"/></a>'
                     )
