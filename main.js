@@ -42,22 +42,22 @@ $.ajax({
 
 // Call Behance Dev API
 $.ajax({
-    url: 'https://api.behance.net/v2/users/' + userID + '/projects?callback=?&client_id='+behanceApiKey,
+    url: 'https://api.behance.net/v2/users/' + userID + '/projects?callback=?&client_id=' + behanceApiKey,
     dataType: 'json',
     type: 'GET',
-    success: function(data) { 
-            for (key in data.projects) {
-                if (key.length > 0) {
-                $.each(function(i, val) {                
+    success: function (data) {
+        for (key in data.projects) {
+            if (key.length > 0) {
+                $.each(function (i, val) {
                     $('#behance').prepend(
-                      '<a class="shot" target="_blank" href="'+ val.projects.url +'" title="' + val.projects.name + '"><div class="title">' + val.projects.name + '</div><img src="'+ val.covers[404] +'"/></a>'
-                      )
-                  })
-                    else {
-                        $('#behance').append('<p>Behance says, No shots yet!</p>');
-                    }
-                }
+                        '<a class="shot" target="_blank" href="' + val.projects.url + '" title="' + val.projects.name + '"><div class="title">' + val.projects.name + '</div><img src="' + val.covers[404] + '"/></a>'
+                    )
+                })
             }
+            else {
+                $('#behance').append('<p>Behance Says, No shots yet!</p>');
+            }
+        }
     }
 });
 
