@@ -48,7 +48,6 @@ $.ajax({
     success: function (data) {
         var myProjects = data.projects;
         console.log('before:', myProjects);
-        for (myProjects) {
             if (myProjects.length > 0) {
                 console.log('after:', myProjects);
                 $.each(function (i, val) {
@@ -61,7 +60,6 @@ $.ajax({
             else {
                 $('#behance').append('<p>Behance Says, No shots yet!</p>');
             }
-        }
     }
 });
 
