@@ -48,10 +48,10 @@ $.ajax({
     success: function (data) {
         var myProjects = data.projects;
             if (myProjects.length > 0) {
-                myProjects.each(function (i, val) {
-                    console.log('is', myProject[i]);
+                $.each(data.reverse(), function (i, val) {
+                    console.log('is', myProjects[i]);
                     $('#behance').prepend(
-                        '<a class="shot" target="_blank" href="' + val.projects.url + '" title="' + val.projects.name + '"><div class="title">' + val.projects.name + '</div><img src="' + val.covers[404] + '"/></a>'
+                        '<a class="shot" target="_blank" href="' + val.url + '" title="' + val.name + '"><div class="title">' + val.name + '</div><img src="' + val.covers[404] + '"/></a>'
                     )
                 })
             }
