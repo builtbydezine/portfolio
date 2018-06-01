@@ -39,7 +39,6 @@ $.ajax({
       }
     }
 });
-var size = '202';
 
 // Call Behance Dev API
 $.ajax({
