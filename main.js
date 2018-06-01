@@ -58,7 +58,7 @@ jQuery(document).ready(function($){
 }(window.jQuery);
 
 // Set the Access Token
-var accessToken = '9f061d26c5a8be96b17a81718959a67dd54ca9669ca41752777193f7cc5be7c3';
+var accessToken = '2865fd485e757f3f12c81bc63e591bdc598353493cd1eb622e250fae6109d33f';
 
 // Call Dribble v2 API
 $.ajax({
