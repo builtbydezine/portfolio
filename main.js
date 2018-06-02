@@ -74,8 +74,13 @@
         });
     })
 
-    $(window).on('load', function() {
-		$(".loader-wrapper").delay(1000).fadeOut(500);
-    });	
+   
+
+    $(window).on('load', function () {
+        // will first fade out the loading animation
+        $(".loader-wrapper").fadeOut();
+        // will fade out the whole DIV that covers the website.
+        $(".preloader").delay(1000).fadeOut("slow");
+    });
     
 })(window.jQuery);
