@@ -1,4 +1,8 @@
-// Set the Access Token
+! function ($) {
+    "use strict";
+    $(document).ready(function () {
+        
+        // Set the Access Token
 var accessToken = '2865fd485e757f3f12c81bc63e591bdc598353493cd1eb622e250fae6109d33f';
 var userID = 'builtbydezine';
 var behanceApiKey = 'mi5pbmpy0xX6lYkhyfZBtaR70SkEeGZn';
@@ -41,11 +45,7 @@ $.ajax({
         }
     }
 });
-
-
-! function ($) {
-    "use strict";
-    $(document).ready(function () {
+        
         var year = new Date().getFullYear();
         $('.year').append(year);
 
