@@ -693,16 +693,23 @@ pre {
     line-height: 1.75;
 }
 
-
-.loader-wrapper {
-    position: absolute;
-    width: 200px;
-    height: 2px;
+.preloader {
+    position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     top: 0;
+    background-color: #fff;
+    z-index: 99999;
+}
+.loader-wrapper {
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 2px;
     margin: auto;
+    top: calc(50% - 1px);
+    left: calc(50% - 100px);
   }
   
   .loader {
