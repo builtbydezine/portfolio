@@ -10,7 +10,7 @@ $.ajax({
     type: 'GET',
     success: function (data) {
         if (data.length > 0) {
-            $.each(data.reverse(), function (i, val) {
+            $.each(data, function (i, val) {
                 $('#dribbble').prepend(
                     '<a class="shot" target="_blank" href="' + val.html_url + '" title="' + val.title + '"><div class="title">' + val.title + '</div><img src="' + val.images.hidpi + '"/></a>'
                 )
@@ -30,7 +30,7 @@ $.ajax({
     success: function (data) {
         var myProjects = data.projects;
         if (myProjects.length > 0) {
-            $.each(myProjects.reverse(), function (i, val) {
+            $.each(myProjects, function (i, val) {
                 $('#behance').prepend(
                     '<a class="shot" target="_blank" href="' + val.url + '" title="' + val.name + '"><div class="title">' + val.name + '</div><img src="' + val.covers[404] + '"/></a>'
                 )
