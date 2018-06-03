@@ -22,7 +22,7 @@
                 if (data.length > 0) {
                     $.each(data.reverse(), function (i, val) {
                         $('#dribbble').prepend(
-                            '<a class="shot" target="_blank" rel= "noopener" href="' + val.html_url + '" title="' + val.title + '"><div class="title">' + val.title + '</div><img src="' + val.images.hidpi + '"/></a>'
+                            '<a class="shot" target="_blank" rel= "noopener" href="' + val.html_url + '" title="' + val.title + '"><div class="title">' + val.title + '</div><img src="' + val.images.hidpi + '" title="' + val.title + '"/></a>'
                         )
                     })
                 }
@@ -42,7 +42,7 @@
                 if (myProjects.length > 0) {
                     $.each(myProjects.reverse(), function (i, val) {
                         $('#behance').prepend(
-                            '<a class="shot" target="_blank" rel= "noopener" href="' + val.url + '" title="' + val.name + '"><div class="title">' + val.name + '</div><img src="' + val.covers[404] + '"/></a>'
+                            '<a class="shot" target="_blank" rel= "noopener" href="' + val.url + '" title="' + val.name + '"><div class="title">' + val.name + '</div><img src="' + val.covers[404] + '" alt="' + val.name + '"/></a>'
                         )
                     })
                 }
