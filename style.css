@@ -524,6 +524,9 @@ pre {
     display: inline-block;
     margin: 0;
 }
+.languages li+li:before {
+    content: '|';
+}
 .languages ul li a {
     color: #8e8e8e;
     font-weight: bold;
