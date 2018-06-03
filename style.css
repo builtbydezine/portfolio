@@ -527,8 +527,7 @@ pre {
 .languages li+li:before {
     content: '|';
 }
-.languages ul li a {
-    color: #8e8e8e;
+.languages ul li, .languages ul li a {
     font-weight: bold;
     font-size: 14px;
     line-height: 14px;
