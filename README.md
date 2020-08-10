@@ -1,4 +1,6 @@
-# portfolio
-My dribbble portfolio
+# Portfolio
+This site is hand-crafted by me using Twitter Bootstrap
 
-Check the Live Version at https://builtbydezine.github.io/portfolio/
+Copyright © Parth Gupta.
+
+### Check the Live Version at https://builtbydezine.github.io/portfolio/
