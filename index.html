@@ -1,142 +1,289 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    
-    <meta name="Description" content="Author: Parth Gupta, UX & UI Designer and front-end developer">
-    <meta name="author" content="Parth Gupta">
-    <meta name="application-name" content="Parth Gupta">
-    <meta name="theme-color" content="#0003fff"/>
-    
-    <title>Parth Gupta - Product Designer (UX & UI)</title>
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46795519-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-46795519-2');
-</script>
-
-
-    <link rel="stylesheet" href="style.css" media="screen" />
-
-
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" async></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#49009a">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <title>Parth Gupta - Product Designer focused on UX</title>
 </head>
 
-<body>
+<body class="wirframe">
+  <header>
+    <nav class="navbar navbar-expand navbar-light">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="assets/images/av.png" srcset="assets/images/av@2x.png 2x">
+          </a>
+        </div>
+        <div class="nav navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="#works">works</a>
+          <a class="nav-item nav-link" href="https://www.dropbox.com/s/zzkewlvuubebazq/parth_gupta_resume.pdf?dl=0" target="_blank">resume</a>
+          <a class="nav-item nav-link" href="#footer">contact</a>
+        </div>
+      </div>
+    </nav>
+    <section class="header-content">
+        <div class="row">
+          <div class="col-md-11">
+            <!-- <h4>👋 Hey! How's it going</h4> -->
+            <h1>Hello, I'm <strong>Parth Gupta</strong></h1>
+            <p>I am a Digital Product Designer currently working at <a href="https://gopaysense.com" target="_blank">PaySense</a>,
+              experienced in UX, UI, Front-end & Visual design.</p>
+            <p class="text-muted"><small>Have an interesting idea? <a href="#" data-mail="builtbydezine" data-subject="Work Enquiry" title="Send me an Email" rel= "noopener">Let's work together!</a></small></p>
+          </div>
+        </div>
+      </section>
+    <div id="header">
+      <canvas width="2880" height="1486" style="width: 1440px; height: 743px;"></canvas>
+    </div>
+  </header>
 
-    <div class="preloader">
-        <div class="loader-wrapper">
-            <div class="loader">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+  <main>
+
+    <section id="works" class="selected-works">
+      <h2>Selected Works</h2>
+
+      <div role="listitem" class="work-container w-dyn-item">
+        <div class="work-description">
+          <div class="work-content">
+            <!-- <img
+              src="https://uploads-ssl.webflow.com/5dae07e3c287230164320c54/5dae421873dbcce8ef99300c_217x0w.jpg" alt=""
+              class="work-logo"> -->
+            <div class="work-header-text">
+              <div>
+                <h3 class="title">The story of Kiosk</h3>
+                <div class="metadata">
+                  <div class="work-metadata">2018-19</div>
+                  <div class="work-metadata"> · </div>
+                  <div class="work-metadata desktop">Case Study</div>
+                  <div class="work-metadata desktop">·</div>
+                  <div class="work-metadata">14 min read</div>
+                </div>
+              </div>
+            </div>
+          <p class="blurb">Rethinking an internal tool for scalability and better productivity</p>
+          </div>
+          <div class="work-links">
+            <a class="btn-link case-study-verify" data-toggle="modal" data-target="#authentication" data-uid="kiosk" href="#" target="_blank">Read Case Study</a>
             </div>
         </div>
-    </div>
+        <img src="./assets/images/kiosk.png"
+          alt=""
+          class="work-img desktop hide">
+      </div>
+
+      <div role="listitem" class="work-container w-dyn-item">
+        <div class="work-description">
+          <div class="work-content">
+            <!-- <img
+              src="https://uploads-ssl.webflow.com/5dae07e3c287230164320c54/5dae421873dbcce8ef99300c_217x0w.jpg" alt=""
+              class="work-logo"> -->
+            <div class="work-header-text">
+              <div>
+                <h3 class="title">Funnel Improvements: Perfios</h3>
+                <div class="metadata">
+                  <div class="work-metadata">2020</div>
+                  <div class="work-metadata"> · </div>
+                  <div class="work-metadata desktop">Case Study</div>
+                  <div class="work-metadata desktop">·</div>
+                  <div class="work-metadata">8 min read</div>
+                </div>
+              </div>
+            </div>
+          <p class="blurb">Decreasing the drop by helping users understand and complete the salary verification.</p>
+          </div>
+          <div class="work-links">
+            <a class="btn-link case-study-verify" data-toggle="modal" data-target="#authentication" data-uid="perfios" href="#" target="_blank">Read Case Study</a>
+            </div>
+        </div>
+        <img src="./assets/images/perfios_2.png"
+          alt="" class="work-img desktop hide">
+      </div>
+      <br>
+      <br>
+
+      <h2>Coming up next...</h2>
+
+      <div role="listitem" class="work-container w-dyn-item not-ready">
+        <div class="work-description">
+          <div class="work-content">
+            <!-- <img
+              src="https://uploads-ssl.webflow.com/5dae07e3c287230164320c54/5dae421873dbcce8ef99300c_217x0w.jpg" alt=""
+              class="work-logo"> -->
+            <div class="work-header-text">
+              <div>
+                <h3 class="title">Increasing the KYC'd base at LazyPay</h3>
+                <div class="metadata">
+                  <div class="work-metadata">2020</div>
+                  <div class="work-metadata"> · </div>
+                  <div class="work-metadata desktop">Case Study</div>
+                  <div class="work-metadata desktop">·</div>
+                  <div class="work-metadata">In Draft</div>
+                </div>
+              </div>
+            </div>
+          <p class="blurb">How we made sure that the user completes the KYC process.</p>
+          </div>
+          <div class="work-links">
+            <a class="btn-link case-study-verify" data-toggle="modal" data-target="#authentication" data-uid="perfios" href="#" target="_blank">Read Case Study</a>
+            </div>
+        </div>
+        <img src="./assets/images/soon.png"
+          alt="" class="work-img desktop hide">
+      </div>
 
 
-    <div class="cd-nav-trigger">
-        <a href="#" data-mail="builtbydezine" title="Send me an Email">Menu
+      <div role="listitem" class="work-container w-dyn-item not-ready">
+        <div class="work-description">
+          <div class="work-content">
+            <!-- <img
+              src="https://uploads-ssl.webflow.com/5dae07e3c287230164320c54/5dae421873dbcce8ef99300c_217x0w.jpg" alt=""
+              class="work-logo"> -->
+            <div class="work-header-text">
+              <div>
+                <h3 class="title">Optimising the onboarding journey</h3>
+                <div class="metadata">
+                  <div class="work-metadata">2020</div>
+                  <div class="work-metadata"> · </div>
+                  <div class="work-metadata desktop">Case Study</div>
+                  <div class="work-metadata desktop">·</div>
+                  <div class="work-metadata">In Draft</div>
+                </div>
+              </div>
+            </div>
+          <p class="blurb">How did we optimised the onboarding journey at LazyPay for lesser drop.</p>
+          </div>
+          <div class="work-links">
+            <a class="btn-link case-study-verify" data-toggle="modal" data-target="#authentication" data-uid="perfios" href="#" target="_blank">Read Case Study</a>
+            </div>
+        </div>
+        <img src="./assets/images/soon.png"
+          alt="" class="work-img desktop hide">
+      </div>
 
-            <img alt="Send Email" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDE2IDE2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxNiAxNjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik04LDEzbC0xLjczMi0xLjUxNmwtNC45NTEsNC4yNDRDMS40OTYsMTUuODk2LDEuNzM5LDE2LDIuMDA3LDE2aDExLjk4NiAgICBjMC4yNjcsMCwwLjUwOS0wLjEwNCwwLjY4OC0wLjI3MWwtNC45NDktNC4yNDRMOCwxM3oiIGZpbGw9IiNGRkZGRkYiLz4KCQk8cG9seWdvbiBwb2ludHM9IjE1LDE1LjE4NiAxNSw2Ljg3NSAxMC4xNjcsMTEuMDc5ICAgIiBmaWxsPSIjRkZGRkZGIi8+CgkJPHBvbHlnb24gcG9pbnRzPSIxNSw2IDgsMCAxLDYgOCwxMiAgICIgZmlsbD0iI0ZGRkZGRiIvPgoJCTxwb2x5Z29uIHBvaW50cz0iMSw2Ljg3OCAxLDE1LjE4NiA1LjgzMywxMS4wNzkgICAiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"
-            />
+    </section>
 
+
+    <!-- <section class="intro">
+      <h2>About</h2>
+      <p>
+        I’m a Product designer living in Mumbai, India. I specialize in designing digital products, such as apps and
+        websites. Usually covering anything from UX
+        and concept development to designing, prototyping, and developing thoughtful interfaces.
+      </p>
+      <div class="columns">
+        <div class="column is-half">
+          <h3>Product</h3>
+          <ul>
+            <li>Research</li>
+            <li>Wireframing</li>
+            <li>Prototyping</li>
+          </ul>
+          <h3 class="small-space-on-top">Software</h3>
+          <ul>
+            <li>Sketch</li>
+            <li>Figma</li>
+            <li>Adobe CC</li>
+          </ul>
+        </div>
+        <div class="column is-half">
+          <h3>Marketing</h3>
+          <ul>
+            <li>Writing</li>
+            <li>Branding</li>
+            <li>Narratives</li>
+          </ul>
+          <h3 class="small-space-on-top">Coding</h3>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Framer.js</li>
+          </ul>
+        </div>
+      </div>
+    </section> -->
+
+  </main>
+
+  <footer id="footer" class="footer" role="contentinfo">
+      <!-- <div class="footer-logo">
+        <a class="footer-logo-brand" href="#">
+          <img src="assets/images/logo.png" srcset="assets/images/logo@2x.png 2x" alt="Footer Logo">
         </a>
-    </div>
 
-    <div class="site-container">
+      </div> -->
 
-        <header class="site-header cf">
-            <div class="site-title">
-                <a href="index.html">Parth Gupta</a>
+
+      <div class="footer-contact">
+        <div id="anim">
+          <a class="e" href="#" data-mail="builtbydezine" data-subject="Work Enquiry" title="Send me an Email" rel= "noopener"><h1>builtbydezine@gmail.com</h1></a>
+          </div>
+<p>I'm always looking to collaborate on interesting ideas whenever I have the time. Let's get in touch if you have an interesting project or just want to say hi ✌️.</p>
+<div class="social">
+  <a href="https://www.behance.net/builtbydezine" target="_blank"><span>Behance</span></a>
+  <a href="https://twitter.com/gptprth" target="_blank"><span>Twitter</span></a>
+  <a href="https://www.linkedin.com/in/gptparth/" target="_blank"><span>Linkedin</span></a>
+  <a href="https://github.com/builtbydezine" target="_blank"><span>Github</span></a>
+  <a href="https://dribbble.com/builtbydezine" target="_blank"><span>Dribbble</span></a>
+</div>
+      </div>
+
+      <div class="site-info">
+        <p class="copyright">This site is hand-crafted by me using Twitter Bootstrap</p>
+
+        <p class="copyright">Copyright © Parth Gupta.
+        <p class="copyright">Illustration courtesy of Freepik. Icons courtesy of FlatIcon. Pattern courtesy of Heropatterns.</p>
+      </div><!-- .site-info -->
+
+
+  </footer>
+
+  <div class="modal fade" id="authentication" tabindex="-1" role="dialog" aria-labelledby="authentication" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="authentication">This content is locked!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>You need a password to access this content. Please enter your key or <a class="e" href="#" data-mail="builtbydezine" data-subject="I want to read case studies" title="Send me an Email" rel= "noopener">send me a request</a></p>
+          <form method="GET" id="authenticate">
+            <div class="form-group">
+              <input type="hidden" class="form-control article-id" id="article-id">
             </div>
-
-            <div class="cf"></div>
-
-            <div class="site-tagline">
-                <p>Hello I'm
-                    <strong>Parth Gupta.</strong>
-                </p>
-                <br/>
-                <span class="subheader">Currently a Product Designer at
-                    <a href="http://gopaysense.com" target="_blank" rel= "noopener">PaySense</a>, experienced with UX, UI, Front-end &amp; Visual Design.</span>
-                <br/>
-                <span class="actions">
-                    <a href="about.html">more about me
-                        <img alt="about me" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0NzYuMjEzIDQ3Ni4yMTMiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ3Ni4yMTMgNDc2LjIxMzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPgo8cG9seWdvbiBwb2ludHM9IjQwNS42MDYsMTY3LjUgMzg0LjM5NCwxODguNzEzIDQxOC43ODcsMjIzLjEwNiAwLDIyMy4xMDYgMCwyNTMuMTA2IDQxOC43ODcsMjUzLjEwNiAzODQuMzk0LDI4Ny41ICAgNDA1LjYwNiwzMDguNzEzIDQ3Ni4yMTMsMjM4LjEwNiAiIGZpbGw9IiMwMDNmZmYiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="
-                        />
-                    </a>
-                </span>
+            <div class="form-group">
+              <input type="password" name="password" class="form-control" placeholder="Enter Password" id="password" autofocus>
             </div>
-
-        </header>
-        <!-- / .site-header -->
-
-        <section class="site-content">
-
-
-            <div id="dribbble" class="projects-shots"></div>
-            <div id="behance" class="projects-shots"></div>
-
-            <!--END .site-content-->
-        </section>
-
-        <footer class="site-footer cf">
-            <p class="footer-text">© Copyright
-                <span class="year"></span>
-            </p>
-            <nav class="languages" role="navigation">
-                <ul>
-
-                    <li>
-                        <a href="#" data-mail="builtbydezine" title="Send me an Email" rel= "noopener">EMAIL</a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/gptparth" target="_blank" rel= "noopener">LINKEDIN</a>
-                    </li>
-                    <li>
-                        <a href="https://dribbble.com/builtbydezine" target="_blank" rel= "noopener">DRIBBBLE</a>
-                    </li>
-                    <li>
-                        <a href="https://www.uplabs.com/builtbydezine" target="_blank" rel= "noopener">UPLABS</a>
-                    </li>
-                    <li>
-                        <a href="https://www.behance.net/builtbydezine" target="_blank" rel= "noopener">BEHANCE</a>
-                    </li>
-                    <li>
-                        <a href="https://bit.ly/2kGqxmH">RESUME</a>
-                    </li>
-
-                </ul>
-            </nav>
-        </footer>
-        <!--END .site-container-->
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary form-submit">Continue</button>
+        </div>
+      </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js" rel="preload"></script>
-    <script src="main.js"></script>
+  </div>
 
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+  <script src="assets/scripts/main.js"></script>
 </body>
 
 </html>
