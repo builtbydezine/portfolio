@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  //$('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="tooltip"]').tooltip();
 
   // Change the selector if needed
   var $table = $(".scroll-table");
