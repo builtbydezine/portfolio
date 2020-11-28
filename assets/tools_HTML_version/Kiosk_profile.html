@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kiosk - PaySense</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.1/cropper.min.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="styles.css" />
+</head>
+
+<body>
+  <div class="main-container">
+    <nav class="left-navbar">
+      <div class="sidebar-sticky">
+        <a class="navbar-brand" href="#">PS</a>
+
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" data-toggle="tooltip" data-placement="right" data-title="My Queue">
+              <i class="material-icons">
+                dashboard
+              </i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-toggle="tooltip" data-placement="right" data-title="Credit Review">
+              <i class="material-icons">
+                all_inbox
+              </i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-toggle="tooltip" data-placement="right" data-title="Applications">
+              <i class="material-icons">
+                description
+              </i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-toggle="tooltip" data-placement="right" data-title="Users">
+              <i class="material-icons">
+                account_box
+              </i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-toggle="tooltip" data-placement="right" data-title="Loans">
+              <i class="material-icons">
+                account_balance_wallet
+              </i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-toggle="tooltip" data-placement="right" data-title="Debit Instrictions">
+              <i class="material-icons">
+                account_balance
+              </i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="right-section h-100">
+      <nav class="navbar navbar-expand navbar-light sticky-top bg-light top-nav header-bar-section">
+        <a href="kiosk_agent.html" class="back-link mr-auto">
+          <i class="material-icons">
+            arrow_back
+          </i>
+          Back to all cases
+        </a>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control search mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+        </form>
+        <ul class="nav nav-pills justify-content-end">
+          <li class="nav-item divider"></li>
+          <li class="nav-item dropdown text-nowrap">
+            <a class="nav-link dropdown-toggle pl-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="photo-icon">K</span> Hello Karan</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">My cases</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Log out</a>
+              </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="content-section">
+
+        <div class="card profile-section">
+          <div class="card-header flex-row-center">
+            <div class="mr-auto">
+              <dt class="heading-2">Vivek Kumar</dt>
+              <dd class="mb-0">Created: Mar 18, 2019</dd>
+            </div>
+            <div class="ml-auto">
+              <span class="icon">
+                <img
+                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSIjMDA4OUZBIiByeD0iMTIiLz4KICAgICAgICA8cGF0aCBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik05LjYzMyAxMS40NjhhNi42NjUgNi42NjUgMCAwIDAgMi45IDIuOWwuOTY3LS45NjlhLjQzNy40MzcgMCAwIDEgLjQ1LS4xMDUgNS4wMiA1LjAyIDAgMCAwIDEuNTcuMjVjLjI0MiAwIC40NC4xOTguNDQuNDR2MS41MzZjMCAuMjQyLS4xOTguNDQtLjQ0LjQ0YTcuNDggNy40OCAwIDAgMS03LjQ4LTcuNDhjMC0uMjQyLjE5OC0uNDQuNDQtLjQ0aDEuNTRjLjI0MiAwIC40NC4xOTguNDQuNDQgMCAuNTUuMDg4IDEuMDc4LjI1IDEuNTdhLjQ0Mi40NDIgMCAwIDEtLjExLjQ1bC0uOTY3Ljk2OHoiLz4KICAgIDwvZz4KPC9zdmc+Cg==" />
+              </span>
+              <span class="body-primary-text">9876554793</span>
+            </div>
+          </div>
+
+          <div class="card ps-card-table mt-auto">
+            <!--<div class="card-header d-flex">
+                Address Info
+                <a href="#" class="btn btn-sm btn-link ml-auto">Edit</a>
+              </div>-->
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Hunter Check</td>
+                  <td class="dot-status dot-status-default">
+                    <span>Remaining</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Digital city user</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Available credit line</td>
+                  <td>₹2,00,000</td>
+                </tr>
+                <tr>
+                  <td>Product mode</td>
+                  <td>Courier</td>
+                </tr>
+                <tr>
+                  <td>Subsequent loan</td>
+                  <td>Not Eligible</td>
+                </tr>
+                <tr>
+                  <td>Topup loan intent</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Post assessment</td>
+                  <td>Success</td>
+                </tr>
+                <tr>
+                  <td>Onboarding</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+
+        <div class="main-content">
+
+          <div class="alert alert-danger">
+            Not eligible for a loan right now as user did not meet the <a href="#" class="alert-link">Minimum bureau
+              requirements</a> according to the policy.
+          </div>
+
+          <div class="card card-page">
+            <div class="card-header flex-row-center">
+              <ul class="nav nav-pills borderTab">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Overview</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Applications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Loans</a>
+                </li>
+                <!--<li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>-->
+              </ul>
+
+
+              <ul class="nav ml-auto">
+                <li class="nav-item onhold dropdown">
+                  <!--<a class="btn btn-sm btn-link nav-link" href="#">+ Add to Hold</a>-->
+                  <a href="#" class="nav-link dot-status dot-status-danger blink dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <span>On hold: Pre-NMI</span>
+                  </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">View Comment</a>
+                      <a class="dropdown-item" href="#">Remove from Hold</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" data-title="karan.ahuja@paysense.in">
+                    <span class="assignee badge badge-pill badge-light"><span class="photo-icon">K</span>Karan</span>
+                  </a>
+                </li>
+              </ul>
+
+
+            </div>
+
+            <div class="card-body">
+              <div class="section-wrap">
+
+                <section id="user-docs">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="section-title">
+                        <i class="material-icons">
+                          assignment_ind
+                        </i> User Documents
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+
+                      <ul class="nav nav-tabs entities">
+                        <li class="nav-item">
+                          <a class="nav-link" data-status="done" href="#"><i class="material-icons">
+                              check_circle
+                            </i>Photo</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-status="done" href="#"><i class="material-icons">
+                              check_circle
+                            </i>POI</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" data-status="pending" href="#"><i class="material-icons">
+                              check_circle
+                            </i>POA (Permanent)</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-status="pending" href="#"><i class="material-icons">
+                              check_circle
+                            </i>POA (Current)</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-status="pending" href="#"><i class="material-icons">
+                              check_circle
+                            </i>Aadhaar</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-status="pending" href="#"><i class="material-icons">
+                              check_circle
+                            </i>Employment</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-status="pending" href="#"><i class="material-icons">
+                              check_circle
+                            </i>Bank</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-status="pending" href="#"><i class="material-icons">
+                              check_circle
+                            </i>Repayment</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-status="pending" href="#"><i class="material-icons">
+                              check_circle
+                            </i>Extra</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="row entity-controls">
+                    <div class="col-md-6">
+                      <div class="entity-title">
+                        <dt>POA (Permanent)</dt>
+                        <dd class="dot-status dot-status-primary">Status: <span>Submitted</span></dd>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="float-right">
+                        <a href="#" class="btn btn-sm btn-primary edit" data-toggle="modal"
+                          data-target="#editModal">Edit</a>
+                        <a href="#" class="btn btn-sm btn-success">Pre-Approve</a>
+                        <a href="#" class="btn btn-sm btn-hold">Need more info</a>
+                        <a href="#" class="btn btn-sm btn-danger">Reject</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-1">
+                    <div class="col-md-5">
+
+                      <div class="card ps-card-table">
+                        <div class="card-header d-flex">
+                          Address Info
+                          <!--<a href="#" class="btn btn-sm btn-link ml-auto">Edit</a>-->
+                        </div>
+                        <table class="table">
+                          <tbody>
+                            <tr>
+                              <td>Address</td>
+                              <td data-rel="extra-info" data-toggle="popover" data-target="multiAddress">6/22-2, 9th
+                                cross
+                                4th main road chamaraj pet, bangalore south
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>City</td>
+                              <td>Bangalore</td>
+                            </tr>
+                            <tr>
+                              <td>State</td>
+                              <td>Karnataka</td>
+                            </tr>
+                            <tr>
+                              <td>Pincode</td>
+                              <td>560018</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card entity-doc">
+                        <div class="card-header">
+                          <dt>Aadhaar Back</dt>
+                          <dd>Uploaded: 26 Apr, 2019, 07:50 AM</dd>
+                        </div>
+                        <div class="card-body">
+                          <div class="img-container">
+                            <img data-mode="primary" class="view-image active" src="aadhaar_back.jpg" alt="pictures">
+                            <img data-mode="primary" class="view-image" src="aadhaar_front.jpg" alt="pictures">
+                          </div>
+                        </div>
+                        <div class="card-footer actions">
+                          <ul class="nav nav-links docs-buttons">
+                            <li class="nav-item">
+                              <a href="#" class="nav-link" data-toggle="tooltip" data-placement="top" data-title="Move"
+                                data-method="setDragMode" data-option="move">
+                                <i class="material-icons">
+                                  open_with
+                                </i>
+                              </a>
+                            </li>
+                            <li class="nav-item" data-toggle="tooltip" data-placement="top" data-title="Crop">
+                              <a href="#" class="nav-link" data-toggle="modal" data-target="#cropperModal">
+                                <i class="material-icons">
+                                  crop
+                                </i>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="#" class="nav-link" data-toggle="tooltip" data-placement="top"
+                                data-title="Brightness">
+                                <i class="material-icons">
+                                  brightness_5
+                                </i>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="#" class="nav-link" data-toggle="tooltip" data-placement="top" data-title="Mask">
+                                <i class="material-icons">
+                                  texture
+                                </i>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="#" class="nav-link" data-toggle="tooltip" data-placement="top"
+                                data-title="Zoom In" data-method="zoom" data-option="0.1">
+                                <i class="material-icons">
+                                  zoom_in
+                                </i>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="#" class="nav-link" data-toggle="tooltip" data-placement="top"
+                                data-title="Zoom Out" data-method="zoom" data-option="-0.1">
+                                <i class="material-icons">
+                                  zoom_out
+                                </i>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="#" class="nav-link" data-toggle="tooltip" data-placement="top"
+                                data-title="Rotate left" data-method="rotate" data-option="-90">
+                                <i class="material-icons">
+                                  rotate_left
+                                </i>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="#" class="nav-link" data-toggle="tooltip" data-placement="top"
+                                data-title="Rotate right" data-method="rotate" data-option="90">
+                                <i class="material-icons">
+                                  rotate_right
+                                </i>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="#" class="nav-link" data-method="reset">
+                                Reset
+                              </a>
+                            </li>
+                          </ul>
+                          <ul class="ml-auto nav nav-links doc-nav">
+                            <li class="nav-items">
+                              <a href="#" class="nav-link" data-target="prev">
+                                  <i class="material-icons">
+                                      chevron_left
+                                      </i>
+                              </a>
+                            </li>
+                            <li class="nav-items">
+                              <a href="#" class="nav-link" data-target="next">
+                                  <i class="material-icons">
+                                      chevron_right
+                                      </i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <hr class="page-divider">
+
+                <section id="active-application">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="section-title">
+                        <i class="material-icons">
+                          assignment_ind
+                        </i> Active Application
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="card application">
+                        <div class="card-body">
+                          <table class="table">
+                            <!--<thead>
+                                <tr>
+                                    <th>Application Info</th>
+                                    <th>User Details</th>
+                                    <th>Product Type</th>
+                                    <th>Source</th>
+                                    <th>Lender</th>
+                                    <th>Status</th>
+                                    <th>Last Update</th>
+                                  </tr>
+                            </thead>-->
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <div class="d-flex">
+
+                                    <div class="column-container">
+                                      <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                                        alt="36x36" class="mr-2 rounded-circle"
+                                        src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                                        data-holder-rendered="true" style="width: 36px; height: 36px;">
+                                    </div>
+                                    <div class="column-container">
+                                      <span><strong>PS1370902</strong></span>
+                                      <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                                    </div>
+
+                                  </div>
+                                </td>
+                                <td>
+                                  <span><strong>₹108500</strong></span>
+                                  <span>for 15 months</span>
+                                </td>
+                                <td>
+                                  <span><strong>@ ₹8571/m</strong></span>
+                                  <span>due on 3</span>
+                                </td>
+                                <td>
+                                  <span>Flexi</span>
+                                </td>
+                                <td>
+                                  <span class="status-primary">Submitted</span>
+                                </td>
+                                <td>
+                                  <span><strong>09 May, 2019</strong></span>
+                                  <span>at 02:55 PM</span>
+                                </td>
+                                <td>
+                                  <span class="lender-iifl">IIFL</span>
+                                </td>
+                                <td>
+                                  <div class="dropdown">
+                                      <a href="#" class="btn btn-sm btn-primary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Actions
+                                        </a>
+      
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                          <a class="dropdown-item" href="#">Action</a>
+                                          <a class="dropdown-item" href="#">Another action</a>
+                                          <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="card-footer">
+                          <div class="row">
+                            <div class="col-md-4">
+                              dkdjsakas
+                            </div>
+                            <div class="col-md-4">
+                              dkdjsakas
+                            </div>
+                            <div class="col-md-4">
+                              dkdjsakas
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <hr class="page-divider">
+
+                <section id="application-history">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="section-title">
+                          <i class="material-icons">
+                              assignment_turned_in
+                              </i> Application History
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="card application empty">
+                        <div class="card-body">
+                          No past applications
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+        <nav class="right-navbar">
+          <div class="sidebar-sticky">
+
+            <ul class="nav flex-column offcanvas-links">
+              <li class="nav-item" data-toggle="tooltip" data-placement="left"
+              data-title="Risk Alerts">
+                <a class="nav-link notify" href="#alert" data-toggle="modal" data-target="#offcanvas">
+                  <i class="material-icons">
+                    notification_important
+                  </i>
+                </a>
+                <span class="badge badge-danger badge-notify">2</span>
+              </li>
+              <li class="nav-item" data-toggle="tooltip" data-placement="left" data-title="Comments">
+                <a  href="#comment" class="nav-link" data-toggle="modal" data-target="#offcanvas">
+                  <i class="material-icons">
+                    comment
+                  </i>
+                </a>
+              </li>
+              <li class="nav-item" data-toggle="tooltip" data-placement="left" data-title="Activity">
+                <a  href="#activity" class="nav-link" data-toggle="modal" data-target="#offcanvas">
+                  <i class="material-icons">
+                    history
+                  </i>
+                </a>
+              </li>
+              <li class="nav-item" data-toggle="tooltip" data-placement="left" data-title="Checklist">
+                <a  href="#checklist" class="nav-link" data-toggle="modal" data-target="#offcanvas">
+                  <i class="material-icons">
+                    alarm_on
+                  </i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- Edit Modal -->
+  <div class="modal right fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <dt>Edit Permanent address</dt>
+          <dd>Please provide the following details to continue</dd>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"
+                value="6/22-2 9th cross 4th main road">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Address 2</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"
+                value="chamaraj pet, bangalore south">
+            </div>
+            <div class="form-group">
+              <label for="inputZip">Zip</label>
+              <input type="text" class="form-control" id="inputZip" value="560018">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity" value="Bangalore">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control" value="Haryana">
+                  <option selected>Choose...</option>
+                  <option>Haryana</option>
+                  <option>Delhi</option>
+                  <option>Maharashtra</option>
+                  <option>Rajasthan</option>
+                  <option>Gujrat</option>
+                  <option>Tamil Nadu</option>
+                  <option>Andhra Pradesh</option>
+                  <option>Goa</option>
+                  <option>Sikkim</option>
+                  <option>Uttarakhand</option>
+                  <option>Uttar Pradesh</option>
+                  <option>Madhya Pradesh</option>
+                  <option>Chattisgarh</option>
+                  <option>Bihar</option>
+                  <option>West Bengal</option>
+                  <option>Jammu & Kashmir</option>
+                  <option>Punjab</option>
+                  <option>Karnataka</option>
+
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Permanent & Current address are different</label>
+                  </div>
+                </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <div class="toggle-sidemodal mr-auto">
+            <a href="#">
+              <i class="material-icons">
+                compare
+              </i>
+            </a>
+          </div>
+          <button type="button" class="btn btn-md btn-link" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-md btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidemodal shown">
+      <div class="modal-content modal-doc">
+        <div class="modal-header">
+          <dt>Aadhaar Back</dt>
+          <dd>Uploaded: 26 Apr, 2019, 07:50 AM</dd>
+        </div>
+        <div class="container"></div>
+        <div class="modal-body">
+          <div class="img-container">
+            <img data-mode="edit" id="editimage" src="aadhaar_back.jpg" alt="pictures">
+          </div>
+        </div>
+        <div class="modal-footer edit-actions">
+          <ul class="nav nav-links docs-buttons mr-auto">
+            <li class="nav-item">
+              <a id="pan" href="#" class="nav-link" data-toggle="tooltip" data-placement="top" data-title="Move"
+                data-method="setDragMode" data-option="move">
+                <i class="material-icons">
+                  open_with
+                </i>
+              </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="top" data-title="Crop">
+              <a id="crop" href="#" class="nav-link" data-method="crop">
+                <i class="material-icons">
+                  crop
+                </i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="brightness" href="#" class="nav-link" data-toggle="tooltip" data-placement="top"
+                data-title="Brightness">
+                <i class="material-icons">
+                  brightness_5
+                </i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="mask" href="#" class="nav-link" data-toggle="tooltip" data-placement="top" data-title="Mask">
+                <i class="material-icons">
+                  texture
+                </i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="zoom_in" href="#" class="nav-link" data-toggle="tooltip" data-placement="top" data-title="Zoom In"
+                data-method="zoom" data-option="0.1">
+                <i class="material-icons">
+                  zoom_in
+                </i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="zoom_out" href="#" class="nav-link" data-toggle="tooltip" data-placement="top"
+                data-title="Zoom Out" data-method="zoom" data-option="-0.1">
+                <i class="material-icons">
+                  zoom_out
+                </i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="rotate_left" href="#" class="nav-link" data-toggle="tooltip" data-placement="top"
+                data-title="Rotate left" data-method="rotate" data-option="-90">
+                <i class="material-icons">
+                  rotate_left
+                </i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="rotate_right" href="#" class="nav-link" data-toggle="tooltip" data-placement="top"
+                data-title="Rotate right" data-method="rotate" data-option="90">
+                <i class="material-icons">
+                  rotate_right
+                </i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="reset" href="#" class="nav-link" data-method="reset">
+                Reset
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Crop Modal -->
+  <div class="modal fade" id="cropperModal" tabindex="-1" role="dialog" aria-labelledby="cropperModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Crop Image</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="img-container">
+            <img data-mode="crop" id="cropimage" src="aadhaar_back.jpg">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-md btn-link" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-md btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas Sidebar -->
+
+  <div class="modal fade right full-modal" id="offcanvas" tabindex="-1" role="dialog" aria-labelledby="offcanvas"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <ul class="nav nav-pills borderTab" id="myTab" role="tablist">
+                <li class="nav-item"> 
+                  <a class="nav-link active" id="alert-tab" data-toggle="tab" href="#alert" role="tab" aria-controls="alert" aria-selected="true">                 
+                      <i class="material-icons">
+                        notification_important
+                      </i> Alerts</a>
+                </li>
+                <li class="nav-item">  
+                  <a class="nav-link" id="comment-tab" data-toggle="tab" href="#comment" role="tab" aria-controls="comment" aria-selected="false">               
+                      <i class="material-icons">
+                        comment
+                      </i> Comment</a>
+                </li>
+                <li class="nav-item"> 
+                  <a class="nav-link" id="activity-tab" data-toggle="tab" href="#activity" role="tab" aria-controls="activity" aria-selected="false">                
+                      <i class="material-icons">
+                        history
+                      </i> Activity</a>
+                </li>
+                <li class="nav-item"> 
+                  <a class="nav-link" id="checklist-tab" data-toggle="tab" href="#checklist" role="tab" aria-controls="checklist" aria-selected="false">                
+                      <i class="material-icons">
+                        alarm_on
+                      </i> Checklist</a>
+                </li>
+              </ul>
+        </div>
+        <div class="modal-body">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="alert" role="tabpanel" aria-labelledby="alert-tab">
+                  1
+                </div>
+                <div class="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="comment-tab">
+                  2
+                  <div class="messages-form">
+                      <div class="messages-form-control">
+                        <input type="text" placeholder="Type here" class="form-control input-pill input-solid message-input">
+                      </div>
+                      <div class="messages-form-tool">
+                        <a href="#" class="btn btn-sm btn-link send">
+                                          
+                        <i class="material-icons">
+                          send
+                        </i>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="activity" role="tabpanel" aria-labelledby="activity-tab">
+                  3
+                </div>
+                <div class="tab-pane fade" id="checklist" role="tabpanel" aria-labelledby="checklist-tab">
+                  4
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.1/cropper.min.js"></script>
+  <script src="crop.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

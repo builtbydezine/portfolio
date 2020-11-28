@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kiosk - PaySense</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" media="all" href="styles.css" />
+</head>
+
+<body>
+  <div class="main-container">
+    <nav class="left-navbar">
+      <div class="sidebar-sticky">
+        <a class="navbar-brand" href="#">PS</a>
+
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" data-toggle="tooltip" data-placement="right" data-title="Dashboard">
+              <img data-v-1b243977=""
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBpZD0iYSIgZD0iTTMgMTNoOFYzSDN2MTB6bTAgOGg4di02SDN2NnptMTAgMGg4VjExaC04djEwem0wLTE4djZoOFYzaC04eiIvPgogICAgPC9kZWZzPgogICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8bWFzayBpZD0iYiIgZmlsbD0iI2ZmZiI+CiAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI2EiLz4KICAgICAgICA8L21hc2s+CiAgICAgICAgPGcgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIxIiBtYXNrPSJ1cmwoI2IpIj4KICAgICAgICAgICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="
+                alt="AD" class="logo mx-auto" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-toggle="tooltip" data-placement="right" data-title="All Cases">
+              <img data-v-1b243977=""
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBpZD0iYSIgZD0iTTE5IDNINWMtMS4xIDAtMiAuOS0yIDJ2N2MwIDEuMS45IDIgMiAyaDE0YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgNmgtNGMwIDEuNjItMS4zOCAzLTMgM3MtMy0xLjM4LTMtM0g1VjVoMTR2NHptLTQgN2g2djNjMCAxLjEtLjkgMi0yIDJINWMtMS4xIDAtMi0uOS0yLTJ2LTNoNmMwIDEuNjYgMS4zNCAzIDMgM3MzLTEuMzQgMy0zeiIvPgogICAgPC9kZWZzPgogICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8bWFzayBpZD0iYiIgZmlsbD0iI2ZmZiI+CiAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI2EiLz4KICAgICAgICA8L21hc2s+CiAgICAgICAgPGcgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIxIiBtYXNrPSJ1cmwoI2IpIj4KICAgICAgICAgICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="
+                alt="AW" class="logo mx-auto" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-toggle="tooltip" data-placement="right" data-title="Your Cases">
+              <img data-v-1b243977=""
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBpZD0iYSIgZD0iTTE5IDNINWMtMS4xIDAtMiAuOS0yIDJ2N2MwIDEuMS45IDIgMiAyaDE0YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgNmgtNGMwIDEuNjItMS4zOCAzLTMgM3MtMy0xLjM4LTMtM0g1VjVoMTR2NHptLTQgN2g2djNjMCAxLjEtLjkgMi0yIDJINWMtMS4xIDAtMi0uOS0yLTJ2LTNoNmMwIDEuNjYgMS4zNCAzIDMgM3MzLTEuMzQgMy0zeiIvPgogICAgPC9kZWZzPgogICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8bWFzayBpZD0iYiIgZmlsbD0iI2ZmZiI+CiAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI2EiLz4KICAgICAgICA8L21hc2s+CiAgICAgICAgPGcgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIxIiBtYXNrPSJ1cmwoI2IpIj4KICAgICAgICAgICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="
+                alt="AW" class="logo mx-auto" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="right-section h-100">
+      <nav class="navbar navbar-expand navbar-light sticky-top bg-light top-nav header-bar-section">
+        <ul class="nav nav-pills mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Assigned to me (82)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Done (19)</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control search mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+        </form>
+        <ul class="nav nav-pills justify-content-end">
+          <li class="nav-item divider"></li>
+          <li class="nav-item text-nowrap">
+            <a class="nav-link pl-0" href="#">
+              <span class="photo-icon">P</span> Hello Pankaj</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="content-section">
+        <div class="main-content full-page">
+          <div class="card card-full">
+            <div class="card-header flex-row-center">
+              <span class="card-title">Filter by:</span>
+
+              <div class="dropdown select-box">
+                <a class="btn btn-primary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuState"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Application state: All
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuState">
+                  <a class="dropdown-item" href="#">All</a>
+                  <a class="dropdown-item" href="#">Need Approval</a>
+                  <a class="dropdown-item" href="#">NMI Docs submitted</a>
+                  <a class="dropdown-item" href="#">On Hold</a>
+                  <a class="dropdown-item" href="#">Reassigned</a>
+                </div>
+              </div>
+
+              <div class="dropdown select-box">
+                <a class="btn btn-primary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuAttributes"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Attributes: All
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuAttributes">
+                  <a href="#" class="ml-3">Clear selected items</a>
+                  <div class="drop-section">
+                    <h6 class="dropdown-header">Lender</h6>
+                    <div class="form-check">
+                      <input type="checkbox" id="iifl" value="IIFL" /><label for="iifl">IIFL</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="fullerton" value="fullerton" /><label for="fullerton">Fullerton</label>
+                    </div>
+                  </div>
+                  <div class="dropdown-divider"></div>
+
+                  <div class="drop-section">
+                    <h6 class="dropdown-header">Income Proof</h6>
+                    <div class="form-check">
+                      <input type="checkbox" id="ipr-n" value="IPRN" /><label for="ipr-n">Not Required</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="ipr-y" value="IPRY" /><label for="ipr-y">Required</label>
+                    </div>
+                  </div>
+                  <div class="dropdown-divider"></div>
+
+                  <div class="drop-section">
+                    <h6 class="dropdown-header">Employment Type</h6>
+                    <div class="form-check">
+                      <input type="checkbox" id="salaried" value="salaried" /><label for="salaried">Salaried</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="self-employed" value="self-employed" /><label for="self-employed">Self
+                        Employed</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="card-table">
+              <div class="expanded-table scroll-table">
+                <table class="table table-hover clickable-row">
+                  <thead>
+                    <tr>
+                      <th>Application Info</th>
+                      <th>User Details</th>
+                      <th>Product Type</th>
+                      <th>Source</th>
+                      <th>Lender</th>
+                      <th>Status</th>
+                      <th>Last Update</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-url="kiosk_profile.html">
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Vivek Kumar</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>Paisabazar</span>
+                      </td>
+                      <td>
+                        <span class="lender-iifl">IIFL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Requested for NMI (PAN, Selfie)</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Parveen Kumar</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>PaySense</span>
+                      </td>
+                      <td>
+                        <span class="lender-iifl">IIFL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Application Submitted</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Devendra Singh</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>PaySense</span>
+                      </td>
+                      <td>
+                        <span class="lender-iifl">IIFL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Application Submitted</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Sujata Raul</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>Creditmantri</span>
+                      </td>
+                      <td>
+                        <span class="lender-iifl">IIFL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>User documents verified</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=81318A&amp;fg=81318A&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%2381318A%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%2381318A%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Utkarsh Kumar</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Byjus</span>
+                      </td>
+                      <td>
+                        <span>Byjus</span>
+                      </td>
+                      <td>
+                        <span class="lender-rbl">RBL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Requested for CMP approval</span>
+                        <span>Just now</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Anurag Bhan Singh</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>PaySense</span>
+                      </td>
+                      <td>
+                        <span class="lender-iifl">IIFL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Requested to Edit details</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Santosh Mehte</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>Financebudha</span>
+                      </td>
+                      <td>
+                        <span class="lender-iifl">IIFL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Application Submitted</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Kuldeep Kumar</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>PaySense</span>
+                      </td>
+                      <td>
+                        <span class="lender-fullerton">Fullerton</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Application Submitted (Image statement)</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Rituraj Maken</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>PaySense</span>
+                      </td>
+                      <td>
+                        <span class="lender-iifl">IIFL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Requested for NMI (Selfie)</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Jitendra Gurjar</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>PaySense</span>
+                      </td>
+                      <td>
+                        <span class="lender-iifl">IIFL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Application Submitted</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Kunal Ankatwar</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>Paisabazar</span>
+                      </td>
+                      <td>
+                        <span class="lender-iifl">IIFL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Application Submitted</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Richa Singh Rathor</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>Creditmantri</span>
+                      </td>
+                      <td>
+                        <span class="lender-iifl">IIFL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Requested for CMP approval</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Swapmil Rasale</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>PaySense</span>
+                      </td>
+                      <td>
+                        <span class="lender-fullerton">Fullerton</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Application Submitted</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Venkatesh H P</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>PaySense</span>
+                      </td>
+                      <td>
+                        <span class="lender-fullerton">Fullerton</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Application Submitted</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Harish Gupta</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>Financebudha</span>
+                      </td>
+                      <td>
+                        <span class="lender-rbl">RBL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Application Submitted</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Purushottam Bagale</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>Paisabazar</span>
+                      </td>
+                      <td>
+                        <span class="lender-iifl">IIFL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Requested for NMI (PAN, Selfie)</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Chandan Kumar Dubey</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>PaySense</span>
+                      </td>
+                      <td>
+                        <span class="lender-iifl">IIFL</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>Requested for NMI (Selfie)</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+
+                          <div class="column-container">
+                            <img data-src="holder.js/36x36?theme=thumb&amp;bg=2b35e0&amp;fg=2b35e0&amp;size=1"
+                              alt="36x36" class="mr-2 rounded-circle"
+                              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_169d4d26082%20text%20%7B%20fill%3A%232b35e0%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_169d4d26082%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%232b35e0%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2212.296875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                              data-holder-rendered="true" style="width: 36px; height: 36px;">
+                          </div>
+                          <div class="column-container">
+                            <span><strong>PS1370902</strong></span>
+                            <span><a href="#" target="_blank" rel="noopener noreferrer">#248639</a></span>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td>
+                        <span><strong>Sachin Shinde</strong></span>
+                        <span>Applied: May 12, 2018</span>
+                      </td>
+                      <td>
+                        <span>Flexi</span>
+                      </td>
+                      <td>
+                        <span>PaySense</span>
+                      </td>
+                      <td>
+                        <span class="lender-fullerton">Fullerton</span>
+                      </td>
+                      <td>
+                        <span class="status-primary">Submitted</span>
+                      </td>
+                      <td>
+                        <span>User documents verified</span>
+                        <span>~ 28 min ago</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!--<div class="card-footer">
+                    <a href="#" class="card-link">Add a note</a>
+                  </div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script src="main.js"></script>
+</body>
+
+</html>
