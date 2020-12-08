@@ -46,11 +46,11 @@ body {
     /* you could also use milliseconds (ms) or something like 2.5s */
     // -webkit-animation: colorchange 50s; /* Chrome and Safari */
 
-    // -webkit-font-smoothing: antialiased;
-    // text-rendering: optimizelegibility;
-    // font-variant-numeric: lining-nums;
-    // -webkit-font-feature-settings: "lnum";
-    // font-feature-settings: "lnum";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    font-variant-numeric: lining-nums;
+    -webkit-font-feature-settings: "lnum";
+    font-feature-settings: "lnum";
     background-color: $bg-dark;
 
     background-color: #fff;
@@ -58,6 +58,19 @@ body {
 
 .scrolled-color header {
     opacity: 0;
+}
+
+.bg-pink {
+    background: lavenderblush !important;
+}
+.bg-blue {
+    background: aliceblue !important;
+}
+.bg-mist {
+    background: mistyrose !important;
+}
+.bg-cream {
+    background: oldlace !important;
 }
 
 @keyframes colorchange {
@@ -164,7 +177,6 @@ a.btn {
 
     &:hover {
         color: #fff;
-        //background: $primary-alt;
     }
 
     &.btn-arrow::after {
@@ -321,27 +333,7 @@ header {
     min-height: 600px;
     transition: opacity 0.5s ease-in-out;
 
-    // &::after,
-    // &::before {
-    //     content: '';
-    //     background: rgba(0, 0, 0, 0.04);
-    //     position: absolute;
-    //     top: -340px;
-    //     right: -60px;
-    //     width: 540px;
-    //     height: 640px;
-    //     opacity: 50%;
-    //     transform: rotate(30deg);
-    // }
-
-    // &::after {
-    //     top: 80px;
-    //     right: -210px;
-    //     z-index: -1;
-    // }
-
     #header {
-        //background: url(../images/olivasky.png) center center no-repeat fixed;
         background-size: cover;
         width: 100vw;
         height: 100vh;
@@ -357,10 +349,9 @@ header {
     align-items: center;
 
     p {
-        font-size: 42px;
+        font-size: 36px;
         color: #352f42;
-        font-weight: 400;
-        letter-spacing: -1px;
+        font-weight: 300;
     }
 
     small {
@@ -372,22 +363,14 @@ header {
     MISC
 =====================*/
 main {
-    //background: #fff;
     width: 100%;
     position: relative;
     z-index: 10;
     margin: auto;
-    padding: 20px 20px 80px;
     display: flex;
     flex-direction: column;
     transition: all 0.1s ease-in-out;
 }
-
-// .scrolled-color main {
-//     width: 100%;
-//     margin: 0;
-//     padding: 200px 120px 120px;
-//   }
 
 .intro p {
     font-size: calc(100vw/(1440/32));
@@ -396,7 +379,7 @@ main {
 
 
 /*=====================
-    Case Study
+    Case Study Slider
 =====================*/
 .case-study {
     position: relative;
@@ -487,6 +470,14 @@ footer {
 
 
 //----------
+
+section#works {
+    padding: 0;
+    max-width: 100%;
+}
+.portfolio-item {
+    margin-bottom: 240px;
+}
 .work-container {
     position: relative;
     display: -webkit-box;
@@ -494,10 +485,7 @@ footer {
     display: -ms-flexbox;
     display: flex;
     overflow: hidden;
-    width: 100%;
     min-height: 420px;
-    max-height: 600px;
-    margin-bottom: 30px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
@@ -507,19 +495,8 @@ footer {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    border-radius: 20px;
-    //background-color: hsla(219.99999999999997, 5.05%, 68.88%, 1.00);
-    //border: 1px solid rgba(0,0,0,0.1);
-    background: #f4f1fb;
-    //border: 1px solid #eeee;
-    background-image: linear-gradient(135deg, hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0));
-    //box-shadow: 0 4px 80px rgba(0,0,0,0.5);
+    background: #fff;
     transition: all 0.2s ease-in-out;
-
-    // &:hover {
-    //     box-shadow: 8px 8px 120px rgba(0, 0, 0, 0.4);
-    //     transform: scale(1.025) translateY(-10px);
-    // }
 
     &.not-ready .work-description {
         opacity: 0.5;
@@ -538,25 +515,20 @@ footer {
         pointer-events: none;
         text-decoration: none;
         color: $primary;
-        //border: none;
         opacity: 0.5;
     }
 }
 
 .work-description {
-    //position: absolute;
     left: 0%;
     top: 0%;
     right: auto;
     bottom: auto;
     z-index: 2;
     display: block;
-    width: 50%;
     max-width: 500px;
     min-width: auto;
-    //margin-top: 60px;
-    //margin-left: 60px;
-    padding: 60px 0 90px 60px;
+    padding-left: 80px;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
@@ -584,6 +556,10 @@ footer {
     border-radius: 16px;
 }
 
+.work-content {
+    margin-bottom: 40px;
+}
+
 .work-header-text {
     display: -webkit-box;
     display: -webkit-flex;
@@ -597,11 +573,10 @@ footer {
 
 .title {
     margin-top: 12px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     color: $text-title;
     font-size: 2.5rem;
     font-weight: 800;
-    letter-spacing: 1px;
 }
 
 .metadata {
@@ -616,25 +591,15 @@ footer {
     padding-right: 4px;
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #352f42;
+    background: #eae9e9;
+    padding: 2px 8px;
+    border-radius: 4px;
 }
-
 .work-img {
-    position: absolute;
-    z-index: 1;
-    height: 100%;
-    max-width: none;
-    margin-left: 50%;
-}
-
-.work-img.desktop.hide {
-    margin-left: 500px;
-}
-
-.work-links {
-    margin-top: 40px;
+    max-width: 100%;
+    height: auto;
 }
 
 .btn-link {
@@ -658,22 +623,16 @@ footer {
     }
 }
 
-.wireframe .work-container {
-    border: 2px solid $primary;
-    border-radius: 0;
-    background-color: #fff;
-
-    .work-img {
-        border-left: 2px solid $primary;
-    }
-}
-
 @media screen and (max-width: 800px) {
     section {
         padding-top: 40px;
         padding-left: 0;
         padding-right: 0;
     }
+
+.portfolio-item {
+    margin-bottom: 60px;
+}
 }
 
 @media screen and (max-width: 760px) {
@@ -681,7 +640,10 @@ footer {
         font-size: 2rem;
     }
     main {
-        padding: 0 20px;
+        padding: 0;
+    }
+    section.padding-sm {
+        padding: 40px 40px 100px;
     }
     .navbar {
         padding-left: 20px;
@@ -700,11 +662,11 @@ footer {
     }
 
     .header-content {
-        padding: 60px 20px 0;
+        padding: 60px 40px 0;
     }
 
     footer {
-        padding: 0 20px 60px;
+        padding: 0 40px 60px;
     }
 
     .work-description {
@@ -730,15 +692,6 @@ footer {
     .title {
         font-size: 2.0rem;
     }
-
-    .work-img {
-        z-index: 1;
-        height: 100%;
-        max-width: none;
-        margin-left: -40px;
-        margin-top: 60px;
-        margin-bottom: -80px;
-    }
     footer h1 {
         font-size: 1.5rem;
     }
@@ -756,6 +709,7 @@ footer {
         cursor: not-allowed;
         pointer-events: none;
         transition: none;
+        font-family: "Muli";
     }
     p {
         color: #352f42;

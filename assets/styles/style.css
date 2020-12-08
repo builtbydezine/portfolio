@@ -19,12 +19,33 @@ body {
   margin-left: auto;
   margin-right: auto;
   /* you could also use milliseconds (ms) or something like 2.5s */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  font-variant-numeric: lining-nums;
+  -webkit-font-feature-settings: "lnum";
+  font-feature-settings: "lnum";
   background-color: #49009a;
   background-color: #fff;
 }
 
 .scrolled-color header {
   opacity: 0;
+}
+
+.bg-pink {
+  background: lavenderblush !important;
+}
+
+.bg-blue {
+  background: aliceblue !important;
+}
+
+.bg-mist {
+  background: mistyrose !important;
+}
+
+.bg-cream {
+  background: oldlace !important;
 }
 
 @keyframes colorchange {
@@ -305,10 +326,9 @@ header #header {
 }
 
 .header-content p {
-  font-size: 42px;
+  font-size: 36px;
   color: #352f42;
-  font-weight: 400;
-  letter-spacing: -1px;
+  font-weight: 300;
 }
 
 .header-content small {
@@ -323,7 +343,6 @@ main {
   position: relative;
   z-index: 10;
   margin: auto;
-  padding: 20px 20px 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -340,7 +359,7 @@ main {
 }
 
 /*=====================
-    Case Study
+    Case Study Slider
 =====================*/
 .case-study {
   position: relative;
@@ -430,16 +449,22 @@ footer ul {
   margin-bottom: 30px;
 }
 
+section#works {
+  padding: 0;
+  max-width: 100%;
+}
+
+.portfolio-item {
+  margin-bottom: 240px;
+}
+
 .work-container {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  width: 100%;
   min-height: 420px;
-  max-height: 600px;
-  margin-bottom: 30px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -447,9 +472,7 @@ footer ul {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  border-radius: 20px;
-  background: #f4f1fb;
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+  background: #fff;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -484,10 +507,9 @@ footer ul {
   bottom: auto;
   z-index: 2;
   display: block;
-  width: 50%;
   max-width: 500px;
   min-width: auto;
-  padding: 60px 0 90px 60px;
+  padding-left: 80px;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -516,6 +538,10 @@ footer ul {
   border-radius: 16px;
 }
 
+.work-content {
+  margin-bottom: 40px;
+}
+
 .work-header-text {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -527,11 +553,10 @@ footer ul {
 
 .title {
   margin-top: 12px;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
   color: #24243c;
   font-size: 2.5rem;
   font-weight: 800;
-  letter-spacing: 1px;
 }
 
 .metadata {
@@ -546,25 +571,16 @@ footer ul {
   padding-right: 4px;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #352f42;
+  background: #eae9e9;
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
 .work-img {
-  position: absolute;
-  z-index: 1;
-  height: 100%;
-  max-width: none;
-  margin-left: 50%;
-}
-
-.work-img.desktop.hide {
-  margin-left: 500px;
-}
-
-.work-links {
-  margin-top: 40px;
+  max-width: 100%;
+  height: auto;
 }
 
 .btn-link {
@@ -591,21 +607,14 @@ footer ul {
   text-decoration: none;
 }
 
-.wireframe .work-container {
-  border: 2px solid #862a5c;
-  border-radius: 0;
-  background-color: #fff;
-}
-
-.wireframe .work-container .work-img {
-  border-left: 2px solid #862a5c;
-}
-
 @media screen and (max-width: 800px) {
   section {
     padding-top: 40px;
     padding-left: 0;
     padding-right: 0;
+  }
+  .portfolio-item {
+    margin-bottom: 60px;
   }
 }
 
@@ -614,7 +623,10 @@ footer ul {
     font-size: 2rem;
   }
   main {
-    padding: 0 20px;
+    padding: 0;
+  }
+  section.padding-sm {
+    padding: 40px 40px 100px;
   }
   .navbar {
     padding-left: 20px;
@@ -631,10 +643,10 @@ footer ul {
     font-size: 24px;
   }
   .header-content {
-    padding: 60px 20px 0;
+    padding: 60px 40px 0;
   }
   footer {
-    padding: 0 20px 60px;
+    padding: 0 40px 60px;
   }
   .work-description {
     width: 100%;
@@ -658,14 +670,6 @@ footer ul {
   .title {
     font-size: 2.0rem;
   }
-  .work-img {
-    z-index: 1;
-    height: 100%;
-    max-width: none;
-    margin-left: -40px;
-    margin-top: 60px;
-    margin-bottom: -80px;
-  }
   footer h1 {
     font-size: 1.5rem;
   }
@@ -685,6 +689,7 @@ footer ul {
   pointer-events: none;
   -webkit-transition: none;
   transition: none;
+  font-family: "Muli";
 }
 
 .cooking > div p {
